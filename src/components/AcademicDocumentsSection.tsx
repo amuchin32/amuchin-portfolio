@@ -7,6 +7,8 @@ interface AcademicDocument {
   title: string;
   issueDate: string;
   description: string;
+  previewUrl: string;
+  downloadUrl: string;
 }
 
 const documents: AcademicDocument[] = [
@@ -16,20 +18,26 @@ const documents: AcademicDocument[] = [
     title: 'Professional Resume',
     issueDate: 'February 2026',
     description: 'Comprehensive resume highlighting technical skills, professional experience, and educational background.',
+    previewUrl: 'https://drive.google.com/file/d/1iYu8XhpgWjj2waCy56mYeyF1f7GOpNH-/preview',
+    downloadUrl: 'https://drive.google.com/uc?export=download&id=1iYu8XhpgWjj2waCy56mYeyF1f7GOpNH-',
   },
   {
     id: 2,
     type: 'transcript',
-    title: 'Master\'s Degree Transcript',
+    title: "Master's Degree Transcript",
     issueDate: 'December 2024',
     description: 'Official transcript from Lovely Professional University showing all coursework and grades.',
+    previewUrl: 'https://drive.google.com/file/d/1N9nm3mi-OsAKgeSLIuqhycswfzxbx0zJ/preview',
+    downloadUrl: 'https://drive.google.com/uc?export=download&id=1N9nm3mi-OsAKgeSLIuqhycswfzxbx0zJ',
   },
   {
     id: 3,
     type: 'certificate',
-    title: 'Bachelor\'s Degree Certificate',
+    title: "Bachelor's Degree Certificate",
     issueDate: 'June 2022',
     description: 'Official degree certificate from Stella Maris University.',
+    previewUrl: 'https://drive.google.com/file/d/1hHqNIEQXT0Cw5O8xd9DX4fYgo9sbEzK_/preview',
+    downloadUrl: 'https://drive.google.com/uc?export=download&id=1hHqNIEQXT0Cw5O8xd9DX4fYgo9sbEzK_',
   },
 ];
 
@@ -42,8 +50,8 @@ const documentTypeColors: Record<string, { bg: string; text: string; icon: strin
 export default function AcademicDocumentsSection() {
   const [selectedDoc, setSelectedDoc] = useState<AcademicDocument | null>(null);
 
-  const handleDownload = (docId: number) => {
-    alert(`Download initiated for document ${docId}. Please contact for actual document access.`);
+  const handleDownload = (doc: AcademicDocument) => {
+    window.open(doc.downloadUrl, '_blank');
   };
 
   const handlePreview = (doc: AcademicDocument) => {
@@ -76,30 +84,19 @@ export default function AcademicDocumentsSection() {
                 className="group rounded-lg border-2 border-border bg-background p-6 transition-all duration-300 hover:border-primary hover:shadow-lg"
               >
                 <div className="space-y-4">
-                  {/* Document Type Badge */}
                   <div className={`flex h-12 w-12 items-center justify-center rounded-lg text-xl transition-transform group-hover:scale-110 ${colors.bg}`}>
                     {colors.icon}
                   </div>
-
-                  {/* Title */}
                   <h3 className="font-montserrat text-lg font-bold text-foreground transition-colors group-hover:text-primary">
                     {doc.title}
                   </h3>
-
-                  {/* Type Badge */}
                   <div className="flex items-center gap-2">
                     <span className={`rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider ${colors.bg} ${colors.text}`}>
                       {doc.type}
                     </span>
                   </div>
-
-                  {/* Issue Date */}
                   <p className="text-sm text-muted-foreground">Issued: {doc.issueDate}</p>
-
-                  {/* Description */}
                   <p className="text-sm text-secondary-foreground">{doc.description}</p>
-
-                  {/* Action Buttons */}
                   <div className="flex gap-3 pt-4">
                     <button
                       onClick={() => handlePreview(doc)}
@@ -109,7 +106,7 @@ export default function AcademicDocumentsSection() {
                       Preview
                     </button>
                     <button
-                      onClick={() => handleDownload(doc.id)}
+                      onClick={() => handleDownload(doc)}
                       className="flex flex-1 items-center justify-center gap-2 rounded-lg border-2 border-primary px-4 py-2 font-semibold text-primary transition-colors hover:bg-primary hover:text-white"
                     >
                       <Download className="h-4 w-4" />
@@ -140,63 +137,44 @@ export default function AcademicDocumentsSection() {
           onClick={() => setSelectedDoc(null)}
         >
           <div
-            className="relative max-h-96 w-full max-w-2xl overflow-y-auto rounded-lg bg-card p-8"
+            className="relative flex flex-col w-full max-w-4xl rounded-lg bg-card overflow-hidden"
+            style={{ height: '90vh' }}
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Close Button */}
-            <button
-              onClick={() => setSelectedDoc(null)}
-              className="absolute right-4 top-4 rounded-lg p-2 transition-colors hover:bg-secondary"
-            >
-              <X className="h-5 w-5 text-foreground" />
-            </button>
-
-            {/* Content */}
-            <div className="space-y-6">
-              <div className="space-y-2">
-                <h3 className="font-montserrat text-2xl font-bold text-foreground">
+            {/* Modal Header */}
+            <div className="flex items-center justify-between px-6 py-4 border-b border-border">
+              <div>
+                <h3 className="font-montserrat text-xl font-bold text-foreground">
                   {selectedDoc.title}
                 </h3>
-                <p className="text-sm text-muted-foreground">
-                  Type: <span className="font-semibold capitalize">{selectedDoc.type}</span>
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  Issued: {selectedDoc.issueDate}
-                </p>
+                <p className="text-sm text-muted-foreground">Issued: {selectedDoc.issueDate}</p>
               </div>
-
-              {/* Document Preview Placeholder */}
-              <div className="space-y-4 rounded-lg border-2 border-border bg-background p-12 text-center">
-                <div className="text-5xl">
-                  {documentTypeColors[selectedDoc.type].icon}
-                </div>
-                <p className="text-secondary-foreground">
-                  Document preview will be displayed here
-                </p>
-                <p className="text-xs text-muted-foreground">
-                  For security purposes, full document preview is available upon request
-                </p>
-              </div>
-
-              {/* Description */}
-              <p className="text-secondary-foreground">{selectedDoc.description}</p>
-
-              {/* Action Buttons */}
-              <div className="flex gap-3 pt-4">
+              <div className="flex items-center gap-3">
                 <button
-                  onClick={() => handleDownload(selectedDoc.id)}
-                  className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-primary px-4 py-3 font-semibold text-primary-foreground transition-colors hover:bg-blue-700"
+                  onClick={() => handleDownload(selectedDoc)}
+                  className="flex items-center gap-2 rounded-lg bg-primary px-4 py-2 font-semibold text-primary-foreground transition-colors hover:bg-blue-700"
                 >
                   <Download className="h-4 w-4" />
-                  Download Document
+                  Download
                 </button>
                 <button
                   onClick={() => setSelectedDoc(null)}
-                  className="flex-1 rounded-lg border-2 border-primary px-4 py-3 font-semibold text-primary transition-colors hover:bg-primary hover:text-white"
+                  className="rounded-lg p-2 transition-colors hover:bg-secondary"
                 >
-                  Close
+                  <X className="h-5 w-5 text-foreground" />
                 </button>
               </div>
+            </div>
+
+            {/* iframe Preview */}
+            <div className="flex-1">
+              <iframe
+                src={selectedDoc.previewUrl}
+                className="w-full h-full"
+                allow="autoplay"
+                style={{ border: 'none' }}
+                title={selectedDoc.title}
+              />
             </div>
           </div>
         </div>
