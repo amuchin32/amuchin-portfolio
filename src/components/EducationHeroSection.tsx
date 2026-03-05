@@ -30,7 +30,7 @@ export default function EducationHeroSection() {
               <div className="flex flex-wrap gap-4 pt-4">
                 <a
                   href="#timeline"
-                  className="px-8 py-3 bg-gradient-to-r from-primary to-primary-dark text-primary-foreground font-semibold rounded-lg hover:shadow-lg transition-all duration-300"
+                  className="px-8 py-3 border-2 border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-all duration-300"
                 >
                   Explore Timeline
                 </a>
@@ -89,3 +89,4 @@ export default function EducationHeroSection() {
     </section>
   );
 }
+

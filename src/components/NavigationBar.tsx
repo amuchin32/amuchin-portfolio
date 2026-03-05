@@ -9,10 +9,10 @@ export default function NavigationBar() {
   const navLinks = [
     { label: 'Home', href: '/' },
     { label: 'Education', href: '/education' },
-    { label: 'Skills', href: '#skills' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Achievements', href: '#achievements' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Skills', href: '/#skills' },
+    { label: 'Projects', href: '/#projects' },
+    { label: 'Achievements', href: '/#achievements' },
+    { label: 'Contact', href: '/#contact' },
   ];
 
   return (
@@ -96,3 +96,4 @@ export default function NavigationBar() {
     </nav>
   );
 }
+
