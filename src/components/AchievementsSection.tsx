@@ -47,7 +47,9 @@ export default function AchievementsSection() {
           {achievements.map((achievement, index) => (
             <div key={index} className="p-6 bg-background rounded-lg border border-border hover:border-primary hover:shadow-lg transition-all duration-300 group">
               <div className="flex gap-6">
-                <div className="text-4xl flex-shrink-0">{achievement.icon}</div>
+                <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
                 <div className="flex-1 space-y-2">
                   <div className="flex items-start justify-between gap-4">
                     <div>
@@ -68,20 +70,20 @@ export default function AchievementsSection() {
             <div>
               <h4 className="font-semibold mb-3 text-lg">Degrees</h4>
               <ul className="space-y-2">
-                <li className="flex items-start gap-3"><span className="text-xl">??</span><div><p className="font-semibold">Master of Science in Information Technology</p><p className="text-sm opacity-90">Lovely Professional University, India (2022-2024)</p></div></li>
-                <li className="flex items-start gap-3"><span className="text-xl">??</span><div><p className="font-semibold">Bachelor of Science in Electronics Engineering</p><p className="text-sm opacity-90">Stella Maris University, Liberia (2013-2022)</p></div></li>
-                <li className="flex items-start gap-3"><span className="text-xl">??</span><div><p className="font-semibold">Associate of Science in Electronics Engineering</p><p className="text-sm opacity-90">Stella Maris Polytechnic, Liberia (2013-2017)</p></div></li>
+                <li className="flex items-start gap-3"><svg class="w-5 h-5 mt-1 text-white flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg><div><p className="font-semibold">Master of Science in Information Technology</p><p className="text-sm opacity-90">Lovely Professional University, India (2022-2024)</p></div></li>
+                <li className="flex items-start gap-3"><svg class="w-5 h-5 mt-1 text-white flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg><div><p className="font-semibold">Bachelor of Science in Electronics Engineering</p><p className="text-sm opacity-90">Stella Maris University, Liberia (2013-2022)</p></div></li>
+                <li className="flex items-start gap-3"><svg class="w-5 h-5 mt-1 text-white flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg><div><p className="font-semibold">Associate of Science in Electronics Engineering</p><p className="text-sm opacity-90">Stella Maris Polytechnic, Liberia (2013-2017)</p></div></li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-3 text-lg">Professional Certifications</h4>
               <ul className="space-y-2">
-                <li className="flex items-center gap-2"><span>?</span><span>Red Hat System Administration (RH124 & RH134)</span></li>
-                <li className="flex items-center gap-2"><span>?</span><span>Full Stack Web Development (MERN)</span></li>
-                <li className="flex items-center gap-2"><span>?</span><span>Fundamentals of Computer Networking</span></li>
-                <li className="flex items-center gap-2"><span>?</span><span>Industry 4.0</span></li>
-                <li className="flex items-center gap-2"><span>?</span><span>Python Programming (Basic)</span></li>
-                <li className="flex items-center gap-2"><span>?</span><span>Generative Engine Optimization (GEO)</span></li>
+                <li className="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-white flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg><span>Red Hat System Administration (RH124 & RH134)</span></li>
+                <li className="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-white flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg><span>Full Stack Web Development (MERN)</span></li>
+                <li className="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-white flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg><span>Fundamentals of Computer Networking</span></li>
+                <li className="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-white flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg><span>Industry 4.0</span></li>
+                <li className="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-white flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg><span>Python Programming (Basic)</span></li>
+                <li className="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-white flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg><span>Generative Engine Optimization (GEO)</span></li>
               </ul>
             </div>
           </div>
@@ -90,6 +92,14 @@ export default function AchievementsSection() {
     </section>
   );
 }
+
+
+
+
+
+
+
+
 
 
 
