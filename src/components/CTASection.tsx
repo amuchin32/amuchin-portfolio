@@ -11,8 +11,8 @@ export default function CTASection() {
           <p className="text-lg max-w-2xl mx-auto opacity-90">
             I'm always interested in hearing about new projects and opportunities. Feel free to reach out if you'd like to collaborate or discuss how I can help with your technical needs.
           </p>
-          <div className="overflow-hidden w-full pt-6">
-            <div className="flex gap-4 animate-marquee whitespace-nowrap">
+          <div className="w-full pt-6">
+            <div className="grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-3">
             <a href="mailto:feolytogba20@gmail.com" className="w-full sm:w-auto px-8 py-3 border-2 border-primary-foreground text-primary-foreground font-semibold rounded-lg hover:bg-primary-foreground hover:text-primary transition-all duration-300 flex items-center justify-center gap-2">
               <Mail className="w-5 h-5" />
               Send Email
@@ -91,6 +91,9 @@ export default function CTASection() {
     </section>
   );
 }
+
+
+
 
 
 
