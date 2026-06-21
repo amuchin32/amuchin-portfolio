@@ -36,8 +36,8 @@ const documents: AcademicDocument[] = [
     title: "Bachelor's Degree Certificate",
     issueDate: 'June 2022',
     description: 'Official degree certificate from Stella Maris University.',
-    previewUrl: 'https://drive.google.com/file/d/1hHqNIEQXT0Cw5O8xd9DX4fYgo9sbEzK_/preview',
-    downloadUrl: 'https://drive.google.com/uc?export=download&id=1hHqNIEQXT0Cw5O8xd9DX4fYgo9sbEzK_',
+    previewUrl: 'https://drive.google.com/file/d/1LnUJsZG4sDm3f1VfC2x7ZKWznaEDxOjR/preview',
+    downloadUrl: 'https://drive.google.com/uc?export=download&id=1LnUJsZG4sDm3f1VfC2x7ZKWznaEDxOjR',
   },
 ];
 
